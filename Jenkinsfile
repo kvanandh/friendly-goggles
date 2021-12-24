@@ -21,7 +21,7 @@ metadata:
   labels:
     component: ci
 spec:
-  	# Use service account that can deploy to all namespaces
+# Use service account that can deploy to all namespaces
   serviceAccountName: cd-jenkins
   containers:
   - name: jnlp
