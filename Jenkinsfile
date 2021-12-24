@@ -13,9 +13,9 @@ pipeline {
 
   agent {
     kubernetes {
-      #label 'sample-app'
+      label 'sample-app'
       defaultContainer 'jnlp'
-      inheritFrom 'docker'
+      inheritFrom 'jnlp'
       yaml """
 apiVersion: v1
 kind: Pod
