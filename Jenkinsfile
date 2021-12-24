@@ -14,8 +14,6 @@ pipeline {
     kubernetes {
       label 'sample-app'
       defaultContainer 'jnlp'
-      image 'jenkins/inbound-agent:4.7-1'
-      inheritFrom 'docker'
       
       yaml """
 	apiVersion: v1
@@ -27,6 +25,8 @@ pipeline {
   	# Use service account that can deploy to all namespaces
 	  serviceAccountName: cd-jenkins
   	  containers:
+	  - name: jnlp
+            image: 'jenkins/inbound-agent:4.7-1'
   	  - name: golang
     	    image: golang:1.10
    	    command:
