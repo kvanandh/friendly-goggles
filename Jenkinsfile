@@ -4,7 +4,7 @@ pipeline {
     PROJECT = "erudite-justice-336012"
     APP_NAME = "gceme"
     FE_SVC_NAME = "${APP_NAME}-frontend"
-    CLUSTER = "jenkins-cd"
+    CLUSTER = "cluster-1"
     CLUSTER_ZONE = "asia-south1-b"
     IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
     JENKINS_CRED = "${PROJECT}"
