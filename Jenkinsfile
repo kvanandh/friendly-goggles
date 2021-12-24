@@ -26,7 +26,7 @@ spec:
   containers:
   - name: jnlp
     image: 'jenkins/inbound-agent:4.7-1'
-    command
+    command:
     - cat
     tty: true
   - name: golang
