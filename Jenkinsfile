@@ -12,7 +12,6 @@ pipeline {
 
   agent {
     kubernetes {
-      label 'sample-app'
       defaultContainer 'jnlp'
       
       yaml """
@@ -27,6 +26,9 @@ pipeline {
   	  containers:
 	  - name: jnlp
             image: 'jenkins/inbound-agent:4.7-1'
+	    command
+	    - cat
+	    tty: true
   	  - name: golang
     	    image: golang:1.10
    	    command:
