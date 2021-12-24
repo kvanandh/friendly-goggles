@@ -44,8 +44,8 @@ spec:
     command:
     - cat
     tty: true
-	"""
-	}
+"""
+}
   }
   stages {
     stage('Test') {
