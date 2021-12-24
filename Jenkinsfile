@@ -14,7 +14,9 @@ pipeline {
     kubernetes {
       label 'sample-app'
       defaultContainer 'jnlp'
+      image 'jenkins/inbound-agent:4.7-1'
       inheritFrom 'docker'
+      
       yaml """
 	apiVersion: v1
 	kind: Pod
