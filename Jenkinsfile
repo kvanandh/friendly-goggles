@@ -14,12 +14,13 @@ pipeline {
     kubernetes {
       label 'sample-app'
       defaultContainer 'jnlp'
+      inheritFrom 'docker'
       yaml """
 	apiVersion: v1
 	kind: Pod
 	metadata:
 	  labels:
- 	component: ci
+ 	    component: ci
 	spec:
   	# Use service account that can deploy to all namespaces
 	  serviceAccountName: cd-jenkins
