@@ -17,3 +17,5 @@ WORKDIR /go/src/app
 COPY . .
 RUN go install -v
 CMD ["app"]
+COPY jenkins-slave /usr/local/bin/jenkins-slave
+ENTRYPOINT ["jenkins-slave"]
