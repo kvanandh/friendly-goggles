@@ -50,8 +50,8 @@ spec:
 				container('jnlp') {
 					sh """
 echo `pwd`
-ln -s `pwd` /go/src/sample-app
-cd /go/src/sample-app
+ln -s `pwd` sample-app
+cd sample-app
 go test
 """
 				}
