@@ -47,7 +47,7 @@ spec:
 		}
 		stage('Test') {
 			steps {
-				container('golang') {
+				container('jnlp-slave') {
 					sh """
 echo "pwd"
 ln -s "pwd" /go/src/sample-app
