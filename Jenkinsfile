@@ -32,7 +32,7 @@ spec:
 }
 }
 	parameters {
-		string(name: 'VERSION', defaultValue: '2', description: 'Production deploy')
+		string(name: 'VERSION', defaultValue: '3', description: 'Production deploy')
 	}
 	stages {
 		stage("build") {
