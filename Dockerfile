@@ -19,10 +19,10 @@ RUN go install -v
 CMD ["app"]
 #COPY jenkins-slave /usr/local/bin/jenkins-slave
 #ENTRYPOINT ["jenkins-slave"]
-#FROM jenkins/slave:3.23-1-alpine
-#MAINTAINER Oleg Nenashev <o.v.nenashev@gmail.com>
-#LABEL Description="This is a base image, which allows connecting Jenkins agents via JNLP protocols" Vendor="Jenkins project" Version="3.23"
+FROM jenkins/slave:3.23-1-alpine
+MAINTAINER Oleg Nenashev <o.v.nenashev@gmail.com>
+LABEL Description="This is a base image, which allows connecting Jenkins agents via JNLP protocols" Vendor="Jenkins project" Version="3.23"
 
-#COPY jenkins-slave /usr/local/bin/jenkins-slave
+COPY jenkins-slave /usr/local/bin/jenkins-slave
 
-#ENTRYPOINT ["jenkins-slave"]
+ENTRYPOINT ["jenkins-slave"]
