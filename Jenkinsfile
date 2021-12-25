@@ -31,6 +31,7 @@ spec:
     tty: true
 """
 }
+}
 	parameters {
 		string(name: 'VERSION', defaultValue: '1', description: 'Production deploy')
 	}
