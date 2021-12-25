@@ -40,10 +40,9 @@ spec:
 				echo "building the application"
 			}
 		}
-	}
-		stage('Test') {
-			steps {
-				container('golang') {
+		    stage('Test') {
+      steps {
+        container('golang') {
           sh """
             echo `pwd`
             ln -s `pwd` /go/src/sample-app
@@ -53,5 +52,6 @@ spec:
         }
       }
     }
+	}
 }
 
