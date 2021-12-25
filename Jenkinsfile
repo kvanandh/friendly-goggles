@@ -13,6 +13,11 @@ spec:
   # Use service account that can deploy to all namespaces
   serviceAccountName: cd-jenkins
   containers:
+  - name: jnlp-slave
+    image: jnlp-slave
+    command:
+    - cat
+    tty: true
   - name: golang
     image: golang:1.10
     command:
