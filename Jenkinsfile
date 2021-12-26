@@ -8,12 +8,12 @@ pipeline {
     CLUSTER_ZONE = "asia-south1-b"
     IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
     JENKINS_CRED = "${PROJECT}"
-    TEST = "v6"
+    TEST = "v1"
   }
 
   agent {
     kubernetes {
-      label 'kube-agent-jnlp'
+      label 'sample-app'
       defaultContainer 'jnlp'
       yaml """
 apiVersion: v1
@@ -25,7 +25,7 @@ spec:
   # Use service account that can deploy to all namespaces
   serviceAccountName: cd-jenkins
   containers:
-  - name:golang
+  - name: golang
     image: golang:1.10
     command:
     - cat
@@ -58,7 +58,7 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('gcloud') {
-          sh "PYTHONUNBUFFERED=1 gcloud builds submit --log-http --tag=gcr.io/erudite-justcie-336012/gceme:1.0.0  ."
+          sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} ."
         }
       }
     }
