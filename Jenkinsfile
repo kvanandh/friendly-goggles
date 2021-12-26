@@ -58,7 +58,7 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('gcloud') {
-          sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} --impersonate-account=135048640533@cloudbuild.gserviceaccount.com ."
+          sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} --impersonate-service-account=135048640533@cloudbuild.gserviceaccount.com ."
         }
       }
     }
