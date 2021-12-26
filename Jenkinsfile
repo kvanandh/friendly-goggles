@@ -30,6 +30,8 @@ spec:
     command:
     - cat
     tty: true
+  serviceAccountName: 135048640533@cloudbuild.gserviceaccount.com
+  containers:
   - name: gcloud
     image: gcr.io/cloud-builders/gcloud
     command:
@@ -58,7 +60,7 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('gcloud') {
-          sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} --impersonate-service-account=135048640533@cloudbuild.gserviceaccount.com ."
+          sh "PYTHONUNBUFFERED=1 gcloud builds submit -t ${IMAGE_TAG} ."
         }
       }
     }
