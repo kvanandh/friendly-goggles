@@ -6,8 +6,7 @@ pipeline {
     FE_SVC_NAME = "${APP_NAME}-frontend"
     CLUSTER = "cluster-1"
     CLUSTER_ZONE = "asia-south1-b"
-    OLD_IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
-    IMAGE_TAG = "docker.io/corelab/gceme:1.0.0"
+    IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
     JENKINS_CRED = "${PROJECT}"
     TEST = "v6"
   }
