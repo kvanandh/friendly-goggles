@@ -30,8 +30,6 @@ spec:
     command:
     - cat
     tty: true
-  serviceAccountName: 135048640533@cloudbuild.gserviceaccount.com
-  containers:
   - name: gcloud
     image: gcr.io/cloud-builders/gcloud
     command:
