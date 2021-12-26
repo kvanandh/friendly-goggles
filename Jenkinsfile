@@ -13,7 +13,7 @@ pipeline {
 
   agent {
     kubernetes {
-      label 'kubeagent'
+      label 'kube-agent-jnlp'
       defaultContainer 'jnlp'
       yaml """
 apiVersion: v1
