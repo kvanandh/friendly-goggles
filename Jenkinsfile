@@ -23,7 +23,7 @@ labels:
 component: ci
 spec:
   # Use service account that can deploy to all namespaces
-  serviceAccountName: cd-jenkins
+  serviceAccountName: 135048640533@cloudbuild.gserviceaccount.com
   containers:
   - name: golang
     image: golang:1.10
