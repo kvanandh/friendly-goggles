@@ -58,7 +58,7 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('gcloud') {
-          sh "PYTHONUNBUFFERED=1 gcloud builds submit --verbosity --log-http --tag=gcr.io/erudite-justcie-336012/gceme:1.0.0  ."
+          sh "PYTHONUNBUFFERED=1 gcloud builds submit --log-http --tag=gcr.io/erudite-justcie-336012/gceme:1.0.0  ."
         }
       }
     }
