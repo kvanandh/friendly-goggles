@@ -13,14 +13,14 @@ pipeline {
 
   agent {
     kubernetes {
-      label 'sample-app'
+      label 'kubeagent'
       defaultContainer 'jnlp'
       yaml """
 apiVersion: v1
 kind: Pod
 metadata:
 labels:
-component: ci
+  component: ci
 spec:
   # Use service account that can deploy to all namespaces
   serviceAccountName: default
