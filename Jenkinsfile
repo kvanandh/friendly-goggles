@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    PROJECT = "erudite-justice-336012"
+    PROJECT = "flawless-acre-336406"
     APP_NAME = "gceme"
     FE_SVC_NAME = "${APP_NAME}-frontend"
     CLUSTER = "cluster-1"
